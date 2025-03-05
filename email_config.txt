@@ -1,0 +1,8 @@
+config1.smtpServer=smtp.gmail.com
+config1.port=587
+config1.tlsEnabled=true
+
+
+config2.smtpServer=smtp.outlook.com
+config2.port=587
+config2.tlsEnabled=false
