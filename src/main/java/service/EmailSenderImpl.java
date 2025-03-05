@@ -16,7 +16,7 @@ import domain.EmailMessage;
 import domain.EmailServerConfig;
 import exception.EmailException;
 
-public class GenericEmailSender implements EmailSender {
+public class EmailSenderImpl implements EmailSender {
 
     @Override
     public void sendEmail(EmailMessage message, EmailServerConfig serverConfigName, EmailAccount account)

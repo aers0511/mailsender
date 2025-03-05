@@ -8,15 +8,15 @@ import domain.EmailAccount;
 import domain.EmailMessage;
 import domain.EmailServerConfig;
 import exception.EmailException;
-import service.GenericEmailSender;
+import service.EmailSenderImpl;
 
 public class EmailManager {
     private final EmailConfigManager configManager;
-    private final GenericEmailSender emailSender;
+    private final EmailSenderImpl emailSender;
 
-    public EmailManager(String configFilePath) {
-        this.configManager = new EmailConfigManager(configFilePath);
-        this.emailSender = new GenericEmailSender();
+     public EmailManager(String configFilePath) {
+        this.configManager = new EmailConfigManager(configFilePath + "\\email_config.txt");
+        this.emailSender = new EmailSenderImpl();
     }
 
     public void sendEmail(EmailMessage message, String configName, EmailAccount account) throws EmailException {

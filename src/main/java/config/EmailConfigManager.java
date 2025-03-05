@@ -10,6 +10,7 @@ import java.util.Set;
 import domain.EmailServerConfig;
 
 public class EmailConfigManager {
+
     private final Properties properties = new Properties();
 
     public EmailConfigManager(String configFilePath) {

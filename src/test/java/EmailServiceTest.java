@@ -10,8 +10,7 @@ import exception.EmailException;
 public class EmailServiceTest {
     public static void main(String[] args) {
 
-        EmailManager manager = new EmailManager(
-                "TU PATH" + "\\email_config.txt");
+        EmailManager manager = new EmailManager("RUTA DEL ARCHIVO DE CONFIGURACION");
 
         EmailAccount account = new EmailAccount("TU CORREO", "PASSWORD");
         EmailMessage message = new EmailMessage("DESTINATIARIO", "Prueba", "Hola");
