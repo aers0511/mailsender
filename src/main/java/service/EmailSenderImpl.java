@@ -46,8 +46,7 @@ public class EmailSenderImpl implements EmailSender {
             mimeMessage.setText(message.getBody());
 
             Transport.send(mimeMessage);
-            
-            System.out.println("enviado");
+
         } catch (MessagingException e) {
             throw new EmailException("Fallo en el envío del correo: " + e.getMessage(), e);
         }

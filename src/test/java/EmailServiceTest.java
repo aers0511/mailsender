@@ -10,12 +10,12 @@ import exception.EmailException;
 public class EmailServiceTest {
     public static void main(String[] args) {
 
-        EmailManager manager = new EmailManager("RUTA DEL ARCHIVO DE CONFIGURACION");
-
-        EmailAccount account = new EmailAccount("TU CORREO", "PASSWORD");
-        EmailMessage message = new EmailMessage("DESTINATIARIO", "Prueba", "Hola");
-
         try {
+            EmailManager manager = new EmailManager(
+                    "C:\\Users\\angel\\OneDrive\\Escritorio\\Arquitectura_Software2025\\email_config.txt");
+
+            EmailAccount account = new EmailAccount("angelelireyessantiagoeli@gmail.com", "ygyz flwi eshp tblc");
+            EmailMessage message = new EmailMessage("angelelireyessantiagoeli@gmail.com", "Prueba", "Hlkaoa");
 
             List<EmailServerConfig> configuraciones = new ArrayList<>(manager.getAvailableConfigs());
 
@@ -24,8 +24,7 @@ public class EmailServiceTest {
             }
 
             // Enviar el correo
-            manager.sendEmail(message, "LA CONFIGURACION QUE QUIERAS, POR EJEMPLIO 'config1'", account);
-
+            manager.sendEmail(message, "config1", account);
         } catch (EmailException e) {
             System.out.println("Error al enviar el correo: " + e.getMessage());
         }

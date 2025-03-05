@@ -14,8 +14,8 @@ public class EmailManager {
     private final EmailConfigManager configManager;
     private final EmailSenderImpl emailSender;
 
-     public EmailManager(String configFilePath) {
-        this.configManager = new EmailConfigManager(configFilePath + "\\email_config.txt");
+    public EmailManager(String configFilePath) {
+        this.configManager = new EmailConfigManager(configFilePath);
         this.emailSender = new EmailSenderImpl();
     }
 
