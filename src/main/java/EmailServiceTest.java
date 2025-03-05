@@ -11,10 +11,10 @@ public class EmailServiceTest {
     public static void main(String[] args) {
 
         EmailManager manager = new EmailManager(
-                "C:\\Users\\angel\\OneDrive\\Escritorio\\Arquitectura_Software2025\\ProyectoMail\\email_config.txt");
+                "TU PATH" + "\\ProyectoMail\\email_config.txt");
 
-        EmailAccount account = new EmailAccount("angelrs-2000@hotmail.com", "DanielReyes@12");
-        EmailMessage message = new EmailMessage("angelrs-2000@hotmail.com", "Prueba", "Hola");
+        EmailAccount account = new EmailAccount("TU CORREO O USERNAME", "TU CONTRASEÑA");
+        EmailMessage message = new EmailMessage("CORREO DESTINO", "Prueba", "Hola");
 
         try {
 
@@ -29,7 +29,6 @@ public class EmailServiceTest {
 
         } catch (EmailException e) {
             System.out.println("Error al enviar el correo: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }
