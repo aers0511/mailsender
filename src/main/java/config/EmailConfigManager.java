@@ -25,6 +25,7 @@ public class EmailConfigManager {
         config.setSmtpServer(properties.getProperty(configName + ".smtpServer"));
         config.setPort(Integer.parseInt(properties.getProperty(configName + ".port")));
         config.setTlsEnabled(Boolean.parseBoolean(properties.getProperty(configName + ".tlsEnabled")));
+
         return config;
     }
 
@@ -43,11 +44,10 @@ public class EmailConfigManager {
                 int port = Integer.parseInt(properties.getProperty(configName + ".port"));
                 boolean tlsEnabled = Boolean.parseBoolean(properties.getProperty(configName + ".tlsEnabled"));
 
-                // String username = properties.getProperty(configName + ".username");
-                // String password = properties.getProperty(configName + ".password");
-
-                // Crear una instancia de EmailServerConfig y agregarla a la lista
+                // Crear una instancia de EmailServerConfig y asignarle el nombre de la
+                // configuración
                 EmailServerConfig config = new EmailServerConfig();
+                config.setConfigName(configName); // Asignar el nombre de la configuración
                 config.setSmtpServer(smtpServer);
                 config.setPort(port);
                 config.setTlsEnabled(tlsEnabled);
@@ -57,6 +57,5 @@ public class EmailConfigManager {
         }
 
         return configs;
-
     }
 }

@@ -1,0 +1,9 @@
+domain\EmailAccount.class
+config\EmailConfigManager.class
+controller\EmailManager.class
+service\EmailSender.class
+domain\EmailServerConfig.class
+domain\EmailMessage.class
+exception\EmailException.class
+service\GenericEmailSender.class
+service\GenericEmailSender$1.class

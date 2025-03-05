@@ -11,10 +11,10 @@ public class EmailServiceTest {
     public static void main(String[] args) {
 
         EmailManager manager = new EmailManager(
-                "TU PATH" + "\\ProyectoMail\\email_config.txt");
+                "TU PATH" + "\\email_config.txt");
 
-        EmailAccount account = new EmailAccount("TU CORREO O USERNAME", "TU CONTRASEÑA");
-        EmailMessage message = new EmailMessage("CORREO DESTINO", "Prueba", "Hola");
+        EmailAccount account = new EmailAccount("TU CORREO", "PASSWORD");
+        EmailMessage message = new EmailMessage("DESTINATIARIO", "Prueba", "Hola");
 
         try {
 
@@ -25,7 +25,7 @@ public class EmailServiceTest {
             }
 
             // Enviar el correo
-            manager.sendEmail(message, "config1", account);
+            manager.sendEmail(message, "LA CONFIGURACION QUE QUIERAS, POR EJEMPLIO 'config1'", account);
 
         } catch (EmailException e) {
             System.out.println("Error al enviar el correo: " + e.getMessage());

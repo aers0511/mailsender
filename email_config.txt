@@ -5,4 +5,4 @@ config1.tlsEnabled=true
 
 config2.smtpServer=smtp.outlook.com
 config2.port=587
-config2.tlsEnabled=false
+config2.tlsEnabled=true

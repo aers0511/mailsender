@@ -8,6 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class EmailServerConfig {
+    private String configName;
     private String smtpServer;
     private int port;
     private boolean tlsEnabled;

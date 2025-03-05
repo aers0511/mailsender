@@ -27,7 +27,9 @@ public class GenericEmailSender implements EmailSender {
             props.put("mail.smtp.port", serverConfigName.getPort());
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", String.valueOf(serverConfigName.isTlsEnabled()));
-
+            props.put("mail.smtp.starttls.enable", String.valueOf(serverConfigName.isTlsEnabled()));
+            props.put("mail.smtp.ssl.protocols", "TLSv1.2,TLSv1.3");
+            
             Session session = Session.getInstance(props, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
