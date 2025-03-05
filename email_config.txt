@@ -2,7 +2,22 @@ config1.smtpServer=smtp.gmail.com
 config1.port=587
 config1.tlsEnabled=true
 
-
-config2.smtpServer=smtp.outlook.com
+config2.smtpServer=smtp.office365.com
 config2.port=587
 config2.tlsEnabled=true
+
+config3.smtpServer=smtp.mail.yahoo.com
+config3.port=587
+config3.tlsEnabled=true
+
+config11.smtpServer=smtp.gmail.com
+config11.port=465
+config11.tlsEnabled=false
+
+config12.smtpServer=smtp.office365.com
+config12.port=465
+config12.tlsEnabled=false
+
+config14.smtpServer=smtp.example.com
+config14.port=25
+config14.tlsEnabled=false

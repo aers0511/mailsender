@@ -28,9 +28,11 @@ public class GenericEmailSender implements EmailSender {
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", String.valueOf(serverConfigName.isTlsEnabled()));
             props.put("mail.smtp.starttls.enable", String.valueOf(serverConfigName.isTlsEnabled()));
-            props.put("mail.smtp.ssl.protocols", "TLSv1.2,TLSv1.3");
-            
+            props.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
+            props.put("mail.smtp.ssl.trust", serverConfigName.getSmtpServer());
+
             Session session = Session.getInstance(props, new Authenticator() {
+
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(account.getUsername(), account.getPassword());
@@ -44,6 +46,8 @@ public class GenericEmailSender implements EmailSender {
             mimeMessage.setText(message.getBody());
 
             Transport.send(mimeMessage);
+            
+            System.out.println("enviado");
         } catch (MessagingException e) {
             throw new EmailException("Fallo en el envío del correo: " + e.getMessage(), e);
         }
